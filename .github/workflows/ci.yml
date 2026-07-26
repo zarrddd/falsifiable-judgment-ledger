@@ -1,0 +1,13 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  conformance:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: validate demo ledger
+        run: python3 tools/validate.py demo/demo-ledger.json
+      - name: expiry discipline (pinned date keeps demo deterministic)
+        run: python3 tools/expiry_check.py demo/demo-ledger.json --as-of 2026-07-01
+      - name: generic leak scan (example categories, filenames only)
+        run: python3 tools/denylist_gate.py --blocklist blocklist.example.txt README.md SPEC.md schema/entry.schema.json schema/ledger.schema.json || (echo "generic scan hit - inspect locally with your private blocklist"; exit 1)
