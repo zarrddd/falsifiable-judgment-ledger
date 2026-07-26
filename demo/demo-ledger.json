@@ -1,0 +1,91 @@
+{
+  "ledger_version": "0.1",
+  "steward": "DEMO — all entries below are FICTIONAL, for illustration only",
+  "fictional": true,
+  "entries": [
+    {
+      "id": "J-2026-001",
+      "claim": "示例开源项目 DEMO-KIT 将在 2027-09-30 前发布 2.0 正式版。",
+      "falsifier": "至 2027-09-30 官方仓库未出现 2.0 正式 tag。",
+      "track": "产品发布",
+      "stated_on": "2026-06-01",
+      "verify_by": "2027-09-30",
+      "status": "pending"
+    },
+    {
+      "id": "J-2026-002",
+      "claim": "示例城市 X 的地铁 99 号线将于 2027 年内通车。",
+      "falsifier": "2027-12-31 前未开通载客运营。",
+      "track": "公共工程",
+      "stated_on": "2026-05-12",
+      "verify_by": "2027-12-31",
+      "status": "pending"
+    },
+    {
+      "id": "J-2026-003",
+      "claim": "示例球队 ALPHA 将进入本赛季联赛前四。",
+      "falsifier": "常规赛结束时排名低于第四。",
+      "track": "赛事",
+      "stated_on": "2026-03-02",
+      "verify_by": "2026-06-15",
+      "status": "wrong",
+      "resolved_on": "2026-06-15",
+      "resolution_note": "最终排名第六。判断记错，原文照登。"
+    },
+    {
+      "id": "J-2026-004",
+      "claim": "示例框架 BETA 的下一个 LTS 将默认启用零配置构建。",
+      "falsifier": "LTS 发布说明中零配置构建为非默认或缺失。",
+      "track": "技术演进",
+      "stated_on": "2026-04-10",
+      "verify_by": "2026-08-01",
+      "status": "correct",
+      "resolved_on": "2026-08-01",
+      "resolution_note": "到期日当日核对发布说明，确认默认启用。"
+    },
+    {
+      "id": "J-2026-005",
+      "claim": "示例学术会议 GAMMA 2026 投稿量将超过上届。",
+      "falsifier": "官方公布投稿量小于或等于上届。",
+      "track": "行业观察",
+      "stated_on": "2026-02-20",
+      "verify_by": "2026-07-01",
+      "status": "partial",
+      "resolved_on": "2026-07-02",
+      "resolution_note": "总量持平（+0.4%），未达『超过』的字面标准，记部分。"
+    },
+    {
+      "id": "J-2026-006",
+      "claim": "（虚构金融示例）示例资产 OMEGA 的三个月隐含波动率将回落至年内均值以下。",
+      "falsifier": "至到期日仍高于年内均值。",
+      "track": "FICTIONAL-FINANCE",
+      "stated_on": "2026-05-05",
+      "verify_by": "2027-08-05",
+      "status": "pending",
+      "corrections": [
+        {
+          "on": "2026-05-06",
+          "note": "原文误写『六个月』，更正为『三个月』。原文不删，此处标注。"
+        }
+      ]
+    },
+    {
+      "id": "J-2026-007",
+      "claim": "示例开源社区 DELTA 将于 2027 年内完成治理章程 v1 投票。",
+      "falsifier": "2027-12-31 前未进入正式投票程序。",
+      "track": "社区治理",
+      "stated_on": "2026-01-15",
+      "verify_by": "2027-12-31",
+      "status": "pending"
+    },
+    {
+      "id": "J-2026-008",
+      "claim": "示例展览《回声》示例城市站观展人数将突破十万。",
+      "falsifier": "闭展官方数据低于十万。",
+      "track": "文化观察",
+      "stated_on": "2026-06-18",
+      "verify_by": "2027-10-08",
+      "status": "pending"
+    }
+  ]
+}

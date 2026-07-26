@@ -1,0 +1,6 @@
+# Example blocklist for tools/denylist_gate.py — replace with YOUR OWN, kept OUTSIDE git.
+# One regex per line. Typical categories:
+\d{9,}
+[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}
+[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+
+internal\.example\.com

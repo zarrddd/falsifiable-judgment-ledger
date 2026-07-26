@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/entry.schema.json",
+  "title": "Falsifiable Judgment Entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "claim",
+    "falsifier",
+    "stated_on",
+    "verify_by",
+    "status"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^J-\\d{4}-\\d{3}$",
+      "description": "Immutable ledger id. Never reused, never renumbered."
+    },
+    "claim": {
+      "type": "string",
+      "minLength": 8,
+      "description": "One declarative, checkable statement. No hedging that makes it unfalsifiable."
+    },
+    "falsifier": {
+      "type": "string",
+      "minLength": 8,
+      "description": "The concrete condition under which this claim is judged wrong."
+    },
+    "track": {
+      "type": "string",
+      "maxLength": 40,
+      "description": "Optional label for the framework or series this entry belongs to."
+    },
+    "stated_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "verify_by": {
+      "type": "string",
+      "format": "date",
+      "description": "Expiry date. Every claim must carry one at publication time."
+    },
+    "status": {
+      "enum": [
+        "pending",
+        "correct",
+        "partial",
+        "wrong"
+      ],
+      "description": "Set only on or after verify_by. Wrong entries are recorded, never removed."
+    },
+    "resolved_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "resolution_note": {
+      "type": "string",
+      "maxLength": 500
+    },
+    "corrections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "on",
+          "note"
+        ],
+        "properties": {
+          "on": {
+            "type": "string",
+            "format": "date"
+          },
+          "note": {
+            "type": "string",
+            "maxLength": 300
+          }
+        }
+      },
+      "description": "Factual corrections are appended in place. The original text is never deleted."
+    }
+  }
+}

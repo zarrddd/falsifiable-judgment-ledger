@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schemas/ledger.schema.json",
+  "title": "Falsifiable Judgment Ledger",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ledger_version",
+    "entries"
+  ],
+  "properties": {
+    "ledger_version": {
+      "type": "string"
+    },
+    "steward": {
+      "type": "string",
+      "maxLength": 80
+    },
+    "fictional": {
+      "type": "boolean",
+      "description": "MUST be true for demo datasets."
+    },
+    "notes": {
+      "type": "array",
+      "description": "Ledger-level annotations required by the spec: reasons for id gaps (discipline #5) or written explanations for overdue entries (conformance §5).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["on", "note"],
+        "properties": {
+          "on": { "type": "string", "format": "date" },
+          "note": { "type": "string", "maxLength": 500 }
+        }
+      }
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "entry.schema.json"
+      }
+    }
+  }
+}
