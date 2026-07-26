@@ -38,9 +38,9 @@
       "falsifier": "LTS 发布说明中零配置构建为非默认或缺失。",
       "track": "技术演进",
       "stated_on": "2026-04-10",
-      "verify_by": "2026-08-01",
+      "verify_by": "2026-07-01",
       "status": "correct",
-      "resolved_on": "2026-08-01",
+      "resolved_on": "2026-07-01",
       "resolution_note": "到期日当日核对发布说明，确认默认启用。"
     },
     {
