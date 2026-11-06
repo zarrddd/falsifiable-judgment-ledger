@@ -43,6 +43,7 @@ GENERIC_HOMES = {"user", "users", "runner", "ubuntu", "ec2-user", "vscode",
                  "$USER", "${USER}", "%USERNAME%", "...", "<LOCAL_USER>",
                  "<LOCAL_ROOT>"}
 ALLOW_MARK = "path-leak: allow"
+SELF_NAME = os.path.basename(__file__)
 
 # `(?<![\w./])` keeps URL path segments such as example.com/en_US/home/x
 # from being mistaken for a filesystem home directory.
@@ -82,6 +83,8 @@ def is_text_candidate(path):
     if any(p in SKIP_DIRS for p in parts[:-1]):
         return False
     base = parts[-1]
+    if base == SELF_NAME:  # the guard documents the very patterns it flags
+        return False
     _, ext = os.path.splitext(base)
     return ext.lower() in TEXT_EXT or base in TEXT_NAMES
 
