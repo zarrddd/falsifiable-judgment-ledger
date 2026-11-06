@@ -1,0 +1,60 @@
+{
+  "ledger_version": "0.1",
+  "steward": "EXAMPLE — fictional everyday-forecast ledger",
+  "fictional": true,
+  "entries": [
+    {
+      "id": "J-2026-001",
+      "claim": "我将在 2026-03-31 前完成连续 60 天的晨跑打卡。",
+      "falsifier": "至 2026-03-31，打卡记录中不存在任何一段连续 60 天的晨跑。",
+      "track": "日常",
+      "stated_on": "2026-01-02",
+      "verify_by": "2026-03-31",
+      "status": "wrong",
+      "resolved_on": "2026-03-31",
+      "resolution_note": "最长连续 41 天，第 42 天因出差中断。判错，照登。"
+    },
+    {
+      "id": "J-2026-002",
+      "claim": "2026 年上半年我将读完 12 本书（以读完最后一页为准）。",
+      "falsifier": "至 2026-06-30 读完的书少于 12 本。",
+      "track": "日常",
+      "stated_on": "2026-01-02",
+      "verify_by": "2026-06-30",
+      "status": "correct",
+      "resolved_on": "2026-06-30",
+      "resolution_note": "读完 13 本。判对。"
+    },
+    {
+      "id": "J-2026-003",
+      "claim": "阳台上 3 月播种的番茄将在 2026-08-15 前结出第一个完全成熟的果实。",
+      "falsifier": "至 2026-08-15 没有任何一个果实完全转红。",
+      "track": "日常",
+      "stated_on": "2026-03-20",
+      "verify_by": "2026-08-15",
+      "status": "partial",
+      "resolved_on": "2026-08-15",
+      "resolution_note": "部分的口径：8 月 13 日有一个果实开始转色，但到期日当天仍未完全转红；『结果』成立、『完全成熟』不成立。记部分。"
+    },
+    {
+      "id": "J-2026-004",
+      "claim": "我将在 2026-09-30 前把个人网站从旧系统完整迁移到静态站点生成器。",
+      "falsifier": "至 2026-09-30，仍有任一页面由旧系统提供服务。",
+      "track": "日常",
+      "stated_on": "2026-05-01",
+      "verify_by": "2026-09-30",
+      "status": "wrong",
+      "resolved_on": "2026-10-01",
+      "resolution_note": "约 60% 页面完成迁移，归档页仍在旧系统。判错。"
+    },
+    {
+      "id": "J-2026-005",
+      "claim": "我将在 2026-12-31 前独立滑完一条初级雪道且全程不摔倒。",
+      "falsifier": "至 2026-12-31 没有任何一次全程不摔的初级道完整滑行。",
+      "track": "日常",
+      "stated_on": "2026-09-01",
+      "verify_by": "2026-12-31",
+      "status": "pending"
+    }
+  ]
+}

@@ -1,9 +1,12 @@
 #!/bin/bash
-# Leak gate: scan staged files with the private blocklist (fail-closed).
+# Leak gate: scan staged files with the private blocklist (fail-closed),
+# then with the path-leak guard (leaked local machine paths, no blocklist needed).
 # v0 note: scans worktree content of staged paths; the pre-push full-tree scan is the backstop.
 BL="${GUARD_BLOCKLIST:-$HOME/.config/ledger-guard/blocklist.txt}"
+TOP="$(git rev-parse --show-toplevel)"
 FILES=()
 while IFS= read -r -d '' f; do FILES+=("$f"); done \
   < <(git diff --cached --name-only --diff-filter=ACM -z)
 [ ${#FILES[@]} -eq 0 ] && exit 0
-python3 "$(git rev-parse --show-toplevel)/tools/denylist_gate.py" --blocklist "$BL" "${FILES[@]}"
+python3 "$TOP/tools/denylist_gate.py" --blocklist "$BL" "${FILES[@]}" || exit 1
+python3 "$TOP/tools/check_path_leaks.py" "${FILES[@]}"

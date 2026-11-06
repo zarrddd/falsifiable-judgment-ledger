@@ -1,0 +1,97 @@
+{
+  "ledger_version": "0.1",
+  "steward": "EXAMPLE — fictional macro ledger; every economy, index and number is invented",
+  "fictional": true,
+  "notes": [
+    {
+      "on": "2026-01-10",
+      "note": "示例账本：全部经济体、指数、商品与数据均为虚构，仅演示宏观类判断如何写到可证伪。不构成任何投资建议（见 SPEC.md §4）。"
+    }
+  ],
+  "entries": [
+    {
+      "id": "J-2026-001",
+      "claim": "示例经济体 ALPHA 的央行将在 2026-06-30 前至少下调政策利率一次。",
+      "falsifier": "至 2026-06-30，政策利率不低于 2026-01-10 的水平。",
+      "track": "FICTIONAL-MACRO",
+      "stated_on": "2026-01-10",
+      "verify_by": "2026-06-30",
+      "status": "correct",
+      "resolved_on": "2026-06-30",
+      "resolution_note": "到期核对：示例央行于 2026-05 会议下调 25 个基点。判对。"
+    },
+    {
+      "id": "J-2026-002",
+      "claim": "示例经济体 ALPHA 2026 年第一季度 CPI 同比均值将低于 3.0%。",
+      "falsifier": "官方公布的一季度三个月 CPI 同比算术均值不低于 3.0%。",
+      "track": "FICTIONAL-MACRO",
+      "stated_on": "2026-01-10",
+      "verify_by": "2026-04-20",
+      "status": "wrong",
+      "resolved_on": "2026-04-20",
+      "resolution_note": "公布均值 3.4%。判错，原文照登；错因是低估了示例经济体的服务业通胀粘性。"
+    },
+    {
+      "id": "J-2026-003",
+      "claim": "示例股指 OMEGA 2026-06-30 收盘点位将高于 2025-12-31 收盘点位。",
+      "falsifier": "2026-06-30 收盘点位小于或等于 2025-12-31 收盘点位。",
+      "track": "FICTIONAL-FINANCE",
+      "stated_on": "2026-01-12",
+      "verify_by": "2026-06-30",
+      "status": "correct",
+      "resolved_on": "2026-07-01",
+      "resolution_note": "到期后一日按交易所收盘数据核对：上半年累计上涨 4.2%。判对。"
+    },
+    {
+      "id": "J-2026-004",
+      "claim": "示例经济体 BETA 的货币对示例经济体 ALPHA 的货币将在 2026-09-30 前贬值超过 5%（以 2026-01-15 中间价为基准）。",
+      "falsifier": "至 2026-09-30，期间任一交易日的贬值幅度均未超过 5%。",
+      "track": "FICTIONAL-FINANCE",
+      "stated_on": "2026-01-15",
+      "verify_by": "2026-09-30",
+      "status": "wrong",
+      "resolved_on": "2026-09-30",
+      "resolution_note": "期间最大贬幅 1.8%，远未触及 5%。判错。事后看，判断把一次性冲击当成了趋势。"
+    },
+    {
+      "id": "J-2026-005",
+      "claim": "示例大宗商品 KAPPA 2026 年第三季度月度均价的平均值将高于第二季度。",
+      "falsifier": "官方月度均价口径下，三季度三个月均值小于或等于二季度三个月均值。",
+      "track": "FICTIONAL-MACRO",
+      "stated_on": "2026-03-02",
+      "verify_by": "2026-10-05",
+      "status": "partial",
+      "resolved_on": "2026-10-05",
+      "resolution_note": "部分的口径：按发表时写明的『官方月度均价』三季度高出 0.3%，字面成立；但按日均价口径持平，且差值小于该口径的四舍五入误差。记部分，不记全对。"
+    },
+    {
+      "id": "J-2026-006",
+      "claim": "示例经济体 ALPHA 2026 年 9 月失业率（10 月公布）将高于 4.5%。",
+      "falsifier": "官方首次公布的 9 月失业率小于或等于 4.5%。",
+      "track": "FICTIONAL-MACRO",
+      "stated_on": "2026-04-08",
+      "verify_by": "2026-10-10",
+      "status": "wrong",
+      "resolved_on": "2026-10-10",
+      "resolution_note": "首次公布值 4.3%。判错。注意：后续修正值不改变本判定——判据写明的是『首次公布』。"
+    },
+    {
+      "id": "J-2026-007",
+      "claim": "示例经济体 GAMMA 2026 年全年 GDP 增速初步核算值将高于 4.5%。",
+      "falsifier": "2027-01-31 前官方公布的初步核算值小于或等于 4.5%。",
+      "track": "FICTIONAL-MACRO",
+      "stated_on": "2026-05-20",
+      "verify_by": "2027-01-31",
+      "status": "pending"
+    },
+    {
+      "id": "J-2026-008",
+      "claim": "示例经济体 ALPHA 央行资产负债表总规模在 2026-12-31 将低于 2025-12-31。",
+      "falsifier": "官方公布的 2026 年末资产负债表总规模大于或等于 2025 年末。",
+      "track": "FICTIONAL-MACRO",
+      "stated_on": "2026-06-03",
+      "verify_by": "2027-01-15",
+      "status": "pending"
+    }
+  ]
+}
